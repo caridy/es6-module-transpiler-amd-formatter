@@ -1,0 +1,25 @@
+{
+  "name": "es6-module-transpiler-amd-formatter",
+  "version": "0.0.1",
+  "description": "ES6 Module Transpiler Extension to Output AMD define() Format.",
+  "author": "Caridy Patino <caridy@gmail.com>",
+  "homepage": "https://github.com/caridy/es6-module-transpiler-amd-formatter",
+  "keywords": [
+    "es6",
+    "module",
+    "transpiler",
+    "amd",
+    "module-formatter"
+  ],
+  "bugs": "https://github.com/caridy/es6-module-transpiler-amd-formatter/issues",
+  "main": "index.js",
+  "files": ["lib/", "index.js"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caridy/es6-module-transpiler-amd-formatter.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "recast": "^0.5.17"
+  }
+}
