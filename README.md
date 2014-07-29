@@ -18,13 +18,7 @@ This output format compromises in few of the ES6 features in ES6 modules, includ
 
 ### Build tools
 
-Since this formatters is an plugin for [es6-module-transpiler], you can use it with any existing build tool that supports [es6-module-transpiler] as the underlaying engine to transpile the ES6 modules. There several plugins developed for different build tools:
-
-* **Grunt:** [grunt-es6-module-transpiler](https://github.com/joefiorini/grunt-es6-module-transpiler), maintained by @joefiorini (not yet compatible with v0.5.x)
-* **Gulp:** [gulp-es6-module-transpiler](https://github.com/ryanseddon/gulp-es6-module-transpiler), maintained by @ryanseddon (not yet compatible with v0.5.x)
-* **Brunch:** [es6-module-transpiler-brunch](https://github.com/gcollazo/es6-module-transpiler-brunch), maintained by @gcollazo *(CommonJS only)* (not yet compatible with v0.5.x)
-* **Broccoli:** [broccoli-es6-concatenator](https://github.com/joliss/broccoli-es6-concatenator), maintained by @joliss (not yet compatible with v0.5.x)
-* **Mimosa:** [mimosa-es6-module-transpiler](https://github.com/dbashford/mimosa-es6-module-transpiler), maintained by @dbashford (not yet compatible with v0.5.x)
+Since this formatters is an plugin for [es6-module-transpiler], you can use it with any existing build tool that supports [es6-module-transpiler] as the underlaying engine to transpile the ES6 modules.
 
 You just need to make sure that `es6-module-transpiler-amd-formatter` is accessible for those tools, and pass the proper `formatter` option thru the [es6-module-transpiler][] configuration.
 
