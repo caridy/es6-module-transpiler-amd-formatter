@@ -1,6 +1,6 @@
 {
   "name": "es6-module-transpiler-amd-formatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ES6 Module Transpiler Extension to Output AMD define() Format.",
   "author": "Caridy Patino <caridy@gmail.com>",
   "homepage": "https://github.com/caridy/es6-module-transpiler-amd-formatter",
@@ -20,6 +20,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "recast": "^0.5.17"
+    "recast": "^0.6.7"
   }
 }
