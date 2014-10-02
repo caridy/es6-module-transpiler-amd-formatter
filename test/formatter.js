@@ -29,5 +29,14 @@ describe('amd-formatter', function() {
       next();
     });
   });
+  
+  it('should load mod3', function(next) {
+    requirejs(['test/fixtures/3'], function(mod3) {
+      expect(mod3.a).to.be.a('number');
+      expect(mod3.b).to.be.a('number');
+
+      next();
+    });
+  });
 
 });
