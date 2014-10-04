@@ -181,7 +181,8 @@ AMDFormatter.prototype.defaultExport = function(mod, declaration) {
  */
 AMDFormatter.prototype.processExportDeclaration = function(mod, nodePath) {
   var node = nodePath.node,
-    declaration = node.declaration;
+    declaration = node.declaration,
+    specifiers = node.specifiers;
 
   if (n.FunctionDeclaration.check(declaration)) {
     // export function <name> () {}
@@ -198,7 +199,11 @@ AMDFormatter.prototype.processExportDeclaration = function(mod, nodePath) {
   } else if (declaration) {
     throw new Error('unexpected export style, found a declaration of type: ' + declaration.type);
   } else {
-    return Replacement.removes(nodePath);
+    return Replacement.swaps(nodePath, [].concat(specifiers.map(function (specifier) {
+      return b.expressionStatement(
+        b.callExpression(b.identifier('__es6_export__'), [b.literal((specifier.name || specifier.id).name), specifier.id])
+      );
+    })));
   }
 };
 
