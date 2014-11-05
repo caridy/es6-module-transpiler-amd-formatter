@@ -52,7 +52,7 @@ AMDFormatter.prototype.processVariableDeclaration = function(/* mod, nodePath */
 };
 
 /**
- * Process a variable declaration found at the top level of the module. Since
+ * Process a function declaration found at the top level of the module. Since
  * we do not need to rewrite exported functions, we can leave function
  * declarations alone.
  *
@@ -60,7 +60,20 @@ AMDFormatter.prototype.processVariableDeclaration = function(/* mod, nodePath */
  * @param {ast-types.NodePath} nodePath
  * @returns {Array.<ast-types.Node>}
  */
-AMDFormatter.prototype.processFunctionDeclaration = function(mod, nodePath) {
+AMDFormatter.prototype.processFunctionDeclaration = function(/* mod, nodePath */) {
+  return null;
+};
+
+/**
+ * Process a class declaration found at the top level of the module. Since
+ * we do not need to rewrite exported classes, we can leave class
+ * declarations alone.
+ *
+ * @param {Module} mod
+ * @param {ast-types.NodePath} nodePath
+ * @returns {Array.<ast-types.Node>}
+ */
+AMDFormatter.prototype.processClassDeclaration = function(/* mod, nodePath */) {
   return null;
 };
 
@@ -162,8 +175,10 @@ AMDFormatter.prototype.processExportDeclaration = function(mod, nodePath) {
     declaration = node.declaration,
     specifiers = node.specifiers;
 
-  if (n.FunctionDeclaration.check(declaration)) {
+  if (n.FunctionDeclaration.check(declaration) ||
+      n.ClassDeclaration.check(declaration)) {
     // export function <name> () {}
+    // export class Foo {}
     return Replacement.swaps(nodePath, [declaration, b.expressionStatement(
       b.callExpression(b.identifier('__es6_export__'), [b.literal(declaration.id.name), declaration.id])
     )]);
