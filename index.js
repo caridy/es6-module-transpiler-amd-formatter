@@ -9,8 +9,8 @@ var b = types.builders;
 var Replacement = require('./lib/replacement');
 
 /**
- * The 'YUI.add' setting for referencing exports aims to produce code that can
- * be used in environments using YUI.
+ * The 'define()' setting for referencing exports aims to produce code that can
+ * be used in environments using AMD.
  *
  * @constructor
  */
